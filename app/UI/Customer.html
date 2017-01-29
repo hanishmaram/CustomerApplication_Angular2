@@ -1,0 +1,33 @@
+<div>
+    <!--Customer Name Obj to UI:- <input type="text" [ngModel]="customerobj.CustomerName" name="CustomerName" id="txtCustomerName"/><br/>
+    Customer Name UI to obj:- <input type="text" (input)="customerobj.CustomerName=$event.target.value" name="CustomerName" id="txtCustomerName"/><br/>
+    Customer Name 2 way binding:- <input type="text" [ngModel]="customerobj.CustomerName" (input)="customerobj.CustomerName=$event.target.value" name="CustomerName" id="txtCustomerName"/><br/>
+    Customer Name 2 way binding syntaic suger:- <input type="text" [(ngModel)]="customerobj.CustomerName"  name="CustomerName" id="txtCustomerName"/><br/>-->
+    Customer Name :- <input type="text" [(ngModel)]="customerobj.CustomerName"  name="CustomerName" id="txtCustomerName"/><br/>
+    Customer Code:- <input type="text" [(ngModel)]="customerobj.CustomerCode" name="CustomerCode" id="txtCustomerCode"/><br/>
+    Customer Amount:- <input type="text" [(ngModel)]="customerobj.CustomerAmount" name="CustomerAmount" id="txtCustomerAmount"/><br/>
+    <input type="button" value="Add Customer" (click)="Add()"/>
+    <input type="button" value="update Customer" (click)="update()"/>
+    <input type="button" value="Cancelr" (click)="clear()"/>
+    {{customerobj.CustomerName}}
+    {{customerobj.CustomerCode}}
+    {{customerobj.CustomerAmount}}
+    <br/>
+    <div>
+        <table>
+            <tr>
+                <td>Customer Name</td>
+                <td>Customer Code</td>
+                <td>Customer Amount</td>
+                <td></td>
+            </tr>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.CustomerName}}</td>
+                <td>{{customer.CustomerCode}}</td>
+                <td>{{customer.CustomerAmount}}</td>
+                <td><a href="#" (click)="select(customer)">select</a></td>
+            </tr>
+            
+        </table>
+    </div>
+</div>
